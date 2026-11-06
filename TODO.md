@@ -1,6 +1,7 @@
 ## TODO ##
 
 **Priority:**
+- [ ] Complete NIXos devshell
 - [ ] Issue #5
 - [ ] Add scroll bar listview
 - [ ] Fix photo bug (5% of the time, the app crashes when we take a picture (comes back to home page screen, error: Lost device connection))

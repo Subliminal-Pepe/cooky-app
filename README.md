@@ -53,3 +53,4 @@ For more details, see the [to-do list.](TODO.md)
  - A big thank to [dougy147](https://github.com/dougy147) for his [marmiteur](https://pub.dev/packages/marmiteur/install) library allowing us to retrieve our favorite recipes from the internet!
  - Thank you to [AlbanDAVID](https://github.com/AlbanDAVID) for creating this project 
 
+## How to join the List
