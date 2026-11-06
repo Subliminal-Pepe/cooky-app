@@ -41,7 +41,7 @@
 - Save data on nextcloud
 - Filter recipes by tags
 
-For more details, see the [to-do list.](https://github.com/AlbanDAVID/cooky-app/blob/main/TODO.md)
+For more details, see the [to-do list.](TODO.md)
 
 ### Screenshots
 <div style="display: flex; justify-content: center;">
