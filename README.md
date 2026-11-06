@@ -41,11 +41,6 @@ Your new free and open-source culinary companion that respects your privacy!
 </div>
 <br>
 
-### Translation
-:fr: <br>
-:uk: <br>
-Feel free to add a new translation :smile:
-
 ### Features to come 
 - Export/import database
 - Save data on nextcloud
