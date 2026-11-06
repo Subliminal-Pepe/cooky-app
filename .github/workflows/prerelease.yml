@@ -1,0 +1,92 @@
+name: Prerelease APK
+
+# Every push to the beta branch builds an APK and refreshes the "beta"
+# prerelease on GitHub.
+on:
+  push:
+    branches: [beta]
+  workflow_dispatch:
+
+concurrency:
+  group: prerelease-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build prerelease APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      # Flutter is pinned on purpose: the project currently uses Gradle 7.5 and
+      # Android Gradle Plugin 7.3.0. Newer Flutter releases require AGP 8+ /
+      # Gradle 8+, so bumping this version requires upgrading android/ first.
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.8'
+          channel: stable
+          cache: true
+
+      # The app still imports the legacy synthetic `package:flutter_gen` l10n
+      # package. Newer Flutter versions disable it by default, so keep it on
+      # until the localization setup is migrated.
+      - name: Enable synthetic localization package
+        run: flutter config --no-explicit-package-dependencies
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Read app version
+        id: version
+        run: |
+          VERSION=$(sed -n 's/^version:[[:space:]]*//p' pubspec.yaml | cut -d+ -f1)
+          echo "name=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Build prerelease APK
+        run: |
+          flutter build apk --release --no-pub \
+            --build-name "${{ steps.version.outputs.name }}-beta.${{ github.run_number }}" \
+            --build-number "${{ github.run_number }}"
+          cp build/app/outputs/flutter-apk/app-release.apk \
+            "build/app/outputs/flutter-apk/cooky-beta.apk"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cooky-beta-${{ github.run_number }}
+          path: build/app/outputs/flutter-apk/cooky-beta.apk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish GitHub prerelease
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: beta
+          name: Cooky Beta
+          prerelease: true
+          body: |
+            Automated beta build from commit `${{ github.sha }}`.
+
+            Version: `${{ steps.version.outputs.name }}-beta.${{ github.run_number }}`
+            Commit: ${{ github.sha }}
+            Branch: `${{ github.ref_name }}`
+          files: build/app/outputs/flutter-apk/cooky-beta.apk
+          fail_on_unmatched_files: true
+          overwrite_files: true

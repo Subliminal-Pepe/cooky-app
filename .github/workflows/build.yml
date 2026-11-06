@@ -1,32 +1,64 @@
-name: Build APK
+name: Release APK
 
+# Release builds are only started manually from the Actions tab.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: release-apk
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
   build:
+    name: Build release APK
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Flutter
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      # Flutter is pinned on purpose: the project currently uses Gradle 7.5 and
+      # Android Gradle Plugin 7.3.0. Newer Flutter releases require AGP 8+ /
+      # Gradle 8+, so bumping this version requires upgrading android/ first.
+      - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.32.8'
           channel: stable
-          # optional: version: '3.22.0'
+          cache: true
 
-      - name: Flutter pub get
+      # The app still imports the legacy synthetic `package:flutter_gen` l10n
+      # package. Newer Flutter versions disable it by default, so keep it on
+      # until the localization setup is migrated.
+      - name: Enable synthetic localization package
+        run: flutter config --no-explicit-package-dependencies
+
+      - name: Install dependencies
         run: flutter pub get
 
-      - name: Build APK
-        run: flutter build apk --release
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
-      - name: Upload APK artifact
+      # Note: android/app/build.gradle currently signs release builds with the
+      # debug keystore. Configure a release keystore before publishing this APK.
+      - name: Build release APK
+        run: flutter build apk --release --no-pub
+
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release
+          name: cooky-release-${{ github.sha }}
           path: build/app/outputs/flutter-apk/app-release.apk
-
+          if-no-files-found: error
+          retention-days: 30
