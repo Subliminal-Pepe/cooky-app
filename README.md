@@ -1,5 +1,5 @@
 <p align="center"> 
-  <b><i>THIS APP IS NO LONGER MAINTAINED FOR NOW.</i></b>
+  <b><i>THIS APP IS NOT ACTIVELY MAINTAINED FOR NOW.</i></b>
 </p>
 
 
@@ -11,19 +11,18 @@
 </p>
 
 <div align="center">
-
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" width="150">](https://f-droid.org/packages/com.albdav.Cooky/)
+  
 [<img src="https://github.com/AlbanDAVID/cooky-app/blob/main/graphics_readme/github-get-it-on.png" width="150">](https://github.com/AlbanDAVID/cooky-app/releases)
 
 </div>
 
 
 <p align="center"> 
-  <b><i>THIS APP IS NO LONGER MAINTAINED FOR NOW.</i></b>
+  <b><i>THIS APP IS NOT ACTIVELY MAINTAINED FOR NOW.</i></b>
 </p>
 
-
-### Discover Cooky, your new free and open-source culinary companion that respects your privacy!
+## Discover Cooky!
+Your new free and open-source culinary companion that respects your privacy!
 - Enjoy a minimalist and elegant interface.
 - Easily import recipes from the web or create them manually.
 - Experience an intuitive process to create your recipes.
@@ -31,13 +30,6 @@
 - Organize your recipes using categories and tags, and easily find them with the integrated search engine.
 - Scroll through the steps with a simple swipe while you cook.
 - Track your ingredient purchases with the integrated shopping list.
-
-### Features to come 
-- Be able to export/import database
-- Save data on nextcloud
-- Filter recipes by tags
-
-For more details, see the [to-do list.](TODO.md)
 
 ### Screenshots
 <div style="display: flex; justify-content: center;">
@@ -53,6 +45,13 @@ For more details, see the [to-do list.](TODO.md)
 :fr: <br>
 :uk: <br>
 Feel free to add a new translation :smile:
+
+### Features to come 
+- Export/import database
+- Save data on nextcloud
+- Filter recipes by tags
+
+For more details, see the [to-do list.](TODO.md)
 
 ### Contributors and thanks
  - Don't hesitate to improve this app with your contribution!
