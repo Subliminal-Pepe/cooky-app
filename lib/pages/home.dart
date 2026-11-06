@@ -14,6 +14,7 @@ import 'package:Cooky/data/categories_database/categories_names.dart';
 import 'package:Cooky/data/categories_database/categories_names_services.dart';
 import 'package:Cooky/pages/recipe_struct.dart';
 import 'package:Cooky/pages/scraping.dart';
+import 'package:Cooky/utils/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -176,7 +177,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                           AppLocalizations.of(context)!.deleteAllRecipes,
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.red)),
+                          style: TextStyle(color: Theme.of(context).colorScheme.error)),
                     ),
                     TextButton(
                       onLongPress: () async {
@@ -192,7 +193,7 @@ class _HomeState extends State<Home> {
                           AppLocalizations.of(context)!
                               .deleteAllRecipesAndCategories,
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.red)),
+                          style: TextStyle(color: Theme.of(context).colorScheme.error)),
                     ),
                   ],
                 ),
@@ -274,7 +275,7 @@ class _HomeState extends State<Home> {
                   child: Text(
                       AppLocalizations.of(context)!.actionAfterLongPress1,
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.red)),
+                      style: TextStyle(color: Theme.of(context).colorScheme.error)),
                 ),
 
                 actions: [
@@ -302,7 +303,7 @@ class _HomeState extends State<Home> {
             content: Text(
               AppLocalizations.of(context)!.errorScrap,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
             actions: [
               ElevatedButton(
@@ -401,7 +402,7 @@ class _HomeState extends State<Home> {
                     TextButton(
                       child: Text(
                         AppLocalizations.of(context)!.confirmExit,
-                        style: TextStyle(color: Colors.red),
+                        style: TextStyle(color: Theme.of(context).colorScheme.error),
                       ),
                       onPressed: () {
                         setState(() {
@@ -418,7 +419,8 @@ class _HomeState extends State<Home> {
                     TextButton(
                       child: Text(
                         AppLocalizations.of(context)!.no,
-                        style: TextStyle(color: Colors.lightGreen),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.tertiary),
                       ),
                       onPressed: () {
                         Navigator.of(context).pop(false);
@@ -443,12 +445,8 @@ class _HomeState extends State<Home> {
           _showDialog();
         },
         child: Scaffold(
-          backgroundColor: Color.fromRGBO(247, 242, 255, 1),
           appBar: AppBar(
-              backgroundColor: Color.fromRGBO(247, 242, 255, 1),
-              title: Text("Cooky",
-                  style:
-                      const TextStyle(color: Color.fromRGBO(147, 113, 202, 1))),
+              title: Text("Cooky"),
               centerTitle: true,
               elevation: 0,
               //leading: const Icon(Icons.menu),
@@ -456,7 +454,8 @@ class _HomeState extends State<Home> {
                   ? <Widget>[
                       TextButton(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.black,
+                          foregroundColor:
+                              Theme.of(context).colorScheme.onSurface,
                         ),
                         onPressed: () {
                           _dialogDeleteAll(context);
@@ -510,7 +509,8 @@ class _HomeState extends State<Home> {
                   alignment: Alignment.center,
                   child: Text(
                     AppLocalizations.of(context)!.noRecipes,
-                    style: TextStyle(color: Colors.blueGrey),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.onSurfaceVariant),
                   ))
               : Column(children: [
                   if (isSearchPressed == true) ...[
@@ -663,8 +663,9 @@ class _HomeState extends State<Home> {
                                               box.getAt(index)!.categoryName,
                                               style: TextStyle(
                                                   fontSize: 20,
-                                                  color: Color.fromRGBO(
-                                                      147, 113, 202, 1)),
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .primary),
                                             )),
                                           ])),
                                         ),
@@ -772,9 +773,11 @@ class _HomeState extends State<Home> {
                                                     },
                                                   ),
                                                   IconButton(
-                                                    icon: const Icon(
+                                                    icon: Icon(
                                                       Icons.delete,
-                                                      color: Colors.redAccent,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .error,
                                                     ),
                                                     onPressed: () {
                                                       _dialogDeleteOneCategory(
@@ -798,43 +801,7 @@ class _HomeState extends State<Home> {
                         )),
                   ]
                 ]),
-          drawer: Drawer(
-            backgroundColor: Color.fromRGBO(234, 221, 255, 1.000),
-            child: Column(children: [
-              DrawerHeader(
-                  child: Image.asset(
-                "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
-              )),
-              // home page list tile
-              ListTile(
-                leading: Icon(Icons.home),
-                title: Text(AppLocalizations.of(context)!.home),
-                onTap: () {
-                  _searchController.clear();
-                  isSearchPressed = false;
-                  Navigator.popAndPushNamed(context, '/home');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.language_sharp),
-                title: Text(AppLocalizations.of(context)!.language),
-                onTap: () {
-                  _searchController.clear();
-                  isSearchPressed = false;
-                  Navigator.popAndPushNamed(context, '/language');
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.info_outline),
-                title: Text(AppLocalizations.of(context)!.about),
-                onTap: () {
-                  _searchController.clear();
-                  isSearchPressed = false;
-                  Navigator.popAndPushNamed(context, '/about');
-                },
-              )
-            ]),
-          ),
+          drawer: const AppDrawer(currentRoute: '/home'),
 
           // floatingActionButton for create a recipe:
           floatingActionButton: isFloatingActionButtonPressed

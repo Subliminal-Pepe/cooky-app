@@ -176,7 +176,8 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
                   onPressed: () {},
                   child: Text(confirmText,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.red)),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.error)),
                 ),
                 actions: [
                   ElevatedButton(
@@ -210,12 +211,11 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
     return PopScope(
         canPop: false,
         child: Scaffold(
-          backgroundColor: const Color.fromRGBO(247, 242, 255, 1),
+          backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: AppBar(
-            backgroundColor: const Color.fromRGBO(247, 242, 255, 1),
             title: Text(widget.categoryName,
-                style:
-                    const TextStyle(color: Color.fromRGBO(147, 113, 202, 1))),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary)),
             centerTitle: true,
             leading: IconButton(
               onPressed: () {
@@ -230,7 +230,7 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
                 ? <Widget>[
                     TextButton(
                       style: TextButton.styleFrom(
-                        foregroundColor: Colors.black,
+                        foregroundColor: Theme.of(context).colorScheme.onSurface,
                       ),
                       onPressed: () {
                         _dialogDelete(
@@ -376,9 +376,9 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
                                               },
                                             ),
                                             IconButton(
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.delete,
-                                                color: Colors.redAccent,
+                                                color: Theme.of(context).colorScheme.error,
                                               ),
                                               onPressed: () {
                                                 _dialogDelete(
@@ -446,9 +446,9 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
                                     }
                                   },
                                 ),
-                                const Divider(
+                                Divider(
                                   height: 50,
-                                  color: Colors.grey,
+                                  color: Theme.of(context).colorScheme.onSurfaceVariant,
                                   indent: 50,
                                   endIndent: 50,
                                   thickness: 0.40,

@@ -136,9 +136,9 @@ class _AddIngredState extends State<AddIngred> {
                         });
                       },
                       child: IconButton(
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.delete,
-                          color: Colors.redAccent,
+                          color: Theme.of(context).colorScheme.error,
                         ),
                         onPressed: () {},
                       ),

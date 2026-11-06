@@ -4,10 +4,9 @@
 
 
 
-[![GitHub Release](https://img.shields.io/github/release/AlbanDAVID/cooky-app.svg?logo=github)(https://github.com/AlbanDAVID/cooky-app/releases)
+![GitHub Release](https://img.shields.io/github/release/AlbanDAVID/cooky-app.svg?logo=github)(https://github.com/AlbanDAVID/cooky-app/releases)
 ![Fdroid]
-
-</Release](https://img.shields.io/f-droid/v/com.albdav.Cooky.svg?logo=F-Droid) <br>
+<br>
 ![Translation](https://github.com/AlbanDAVID/cooky-app/blob/main/graphics_readme/translate_image.png) :fr: :uk:
 >
 
@@ -62,4 +61,5 @@ Feel free to add a new translation :smile:
 ### Contributors and thanks
  - Don't hesitate to improve this app with your contribution!
  - A big thank to [dougy147](https://github.com/dougy147) for his [marmiteur](https://pub.dev/packages/marmiteur/install) library allowing us to retrieve our favorite recipes from the internet!
+ - Thank you to [AlbanDAVID](https://github.com/AlbanDAVID) for creating this project 
 

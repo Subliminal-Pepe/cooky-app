@@ -76,7 +76,6 @@
     "clear" : "Effacer",
     "quantity" : "Quantité",
     "listUnits": "g, kg, mg, ml, l, cl, cc à café, cc à soupe, tasse(s), pincée(s), goutte(s), morceau(x)",
-    "settings" : "Paramètres",
     "language" : "Langue",
     "supportedLanguage" : "Anglais,Français,Langue de votre appareil (anglais et français supportés)",
     "askRestart" : "Merci de redémarrer votre application",
@@ -105,7 +104,23 @@
      "contact" : "Contact :",
      "reportIssue" : "Signaler un problème",
      "supportMe" : "Vous pouvez me soutenir en ajoutant une étoile sur mon github et/ou en faisant un don.",
-     "donate" : "Faire un don"}
+     "donate" : "Faire un don",
+     "settings" : "Paramètres",
+     "customization" : "Personnalisation",
+     "themeMode" : "Thème",
+     "themeModeSystem" : "Système",
+     "themeModeLight" : "Clair",
+     "themeModeDark" : "Sombre",
+     "themes" : "Thèmes",
+     "dynamicColor" : "Couleur du fond d'écran",
+     "dynamicColorSubtitle" : "Utilise les couleurs de votre fond d'écran (Android 12 et versions ultérieures). Une palette par défaut est utilisée sur les autres appareils.",
+     "themePurple" : "Violet",
+     "themeBlue" : "Bleu",
+     "themeGreen" : "Vert",
+     "themeTeal" : "Turquoise",
+     "themeOrange" : "Orange",
+     "themePink" : "Rose",
+     "themePreview" : "Aperçu"}
 
 
 

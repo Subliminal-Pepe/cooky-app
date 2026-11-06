@@ -1,5 +1,5 @@
 name: Cooky
-description: A new Flutter project.
+description: Discover Cooky, your new free and open-source culinary companion that respects your privacy! Import or create your favorite recipes.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
@@ -43,6 +43,7 @@ dependencies:
   url_launcher: ^6.2.1
   go_router: ^12.1.3
   shared_preferences: ^2.2.2
+  dynamic_color: ^1.7.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

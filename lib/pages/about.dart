@@ -7,6 +7,7 @@
 
 // ignore_for_file: unnecessary_string_interpolations
 
+import 'package:Cooky/utils/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -152,37 +153,7 @@ class _AboutState extends State<About> {
               ),
             ),
           ]),
-          drawer: Drawer(
-            backgroundColor: const Color.fromRGBO(234, 221, 255, 1.000),
-            child: Column(children: [
-              DrawerHeader(
-                  child: Image.asset(
-                "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
-              )),
-              // home page list tile
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: Text(AppLocalizations.of(context)!.home),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/home');
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.language_sharp),
-                title: Text(AppLocalizations.of(context)!.language),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/language');
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.info_outline),
-                title: Text(AppLocalizations.of(context)!.about),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/about');
-                },
-              )
-            ]),
-          ),
+          drawer: const AppDrawer(currentRoute: '/about'),
         ));
   }
 }

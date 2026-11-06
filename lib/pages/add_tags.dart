@@ -115,9 +115,9 @@ class _AddTagsState extends State<AddTags> {
                         });
                       },
                       child: IconButton(
-                        icon: const Icon(
+                        icon: Icon(
                           Icons.delete,
-                          color: Colors.redAccent,
+                          color: Theme.of(context).colorScheme.error,
                         ),
                         onPressed: () {},
                       ),

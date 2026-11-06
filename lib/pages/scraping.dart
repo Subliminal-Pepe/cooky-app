@@ -83,7 +83,8 @@ class _ScrapingState extends State<Scraping> {
             content: Text(
               AppLocalizations.of(context)!.categoryEmpty,
               textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.red),
+              style: TextStyle(
+                  color: Theme.of(context).colorScheme.error),
             ),
             actions: [
               ElevatedButton(
@@ -243,7 +244,9 @@ class _ScrapingState extends State<Scraping> {
                 });
               },
               child:
-                  const Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                  Icon(Icons.delete,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -334,7 +337,9 @@ class _ScrapingState extends State<Scraping> {
                 });
               },
               child:
-                  const Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                  Icon(Icons.delete,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -417,7 +422,9 @@ class _ScrapingState extends State<Scraping> {
                 });
               },
               child:
-                  const Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                  Icon(Icons.delete,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -498,7 +505,9 @@ class _ScrapingState extends State<Scraping> {
                 });
               },
               child:
-                  const Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                  Icon(Icons.delete,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -619,7 +628,9 @@ class _ScrapingState extends State<Scraping> {
                 });
               },
               child:
-                  const Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                  Icon(Icons.delete,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -687,8 +698,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapAllIngredient = [];
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -739,8 +751,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapAllIngredient = [];
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -751,7 +764,7 @@ class _ScrapingState extends State<Scraping> {
   Widget showIngredientsSelected() {
     return Container(
         decoration: BoxDecoration(
-          color: Color.fromRGBO(247, 242, 255, 1),
+          color: Theme.of(context).colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(15.0),
         ),
         height: 400,
@@ -793,9 +806,9 @@ class _ScrapingState extends State<Scraping> {
                       });
                     },
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.delete,
-                        color: Colors.redAccent,
+                        color: Theme.of(context).colorScheme.error,
                       ),
                       onPressed: () {},
                     ),
@@ -871,8 +884,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapStepsRecipe = [];
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -912,8 +926,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapStepsRecipe = [];
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -924,7 +939,7 @@ class _ScrapingState extends State<Scraping> {
   Widget showStepsAdded() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       height: 400,
@@ -963,9 +978,9 @@ class _ScrapingState extends State<Scraping> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1041,8 +1056,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapTags!.clear();
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -1082,8 +1098,9 @@ class _ScrapingState extends State<Scraping> {
                         widget.scrapTags!.clear();
                       });
                     },
-                    child: const Icon(Icons.delete,
-                        size: 20, color: Colors.redAccent),
+                    child: Icon(Icons.delete,
+                            size: 20,
+                            color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -1094,7 +1111,7 @@ class _ScrapingState extends State<Scraping> {
   Widget showTagsAdded() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       height: 400,
@@ -1131,9 +1148,9 @@ class _ScrapingState extends State<Scraping> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1204,7 +1221,8 @@ class _ScrapingState extends State<Scraping> {
             actions: <Widget>[
               TextButton(
                 child: Text(AppLocalizations.of(context)!.confirmExit,
-                    style: const TextStyle(color: Colors.red)),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.error)),
                 onPressed: () {
                   setState(() {
                     // we can go back
@@ -1218,7 +1236,8 @@ class _ScrapingState extends State<Scraping> {
               ),
               TextButton(
                 child: Text(AppLocalizations.of(context)!.no,
-                    style: const TextStyle(color: Colors.lightGreen)),
+                    style: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },

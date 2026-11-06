@@ -183,7 +183,8 @@ class _RecipeStructState extends State<RecipeStruct> {
                   onPressed: () {},
                   child: Text(AppLocalizations.of(context)!.confirmLongPress2,
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.red)),
+                      style: TextStyle(
+                          color: Theme.of(context).colorScheme.error)),
                 ),
                 actions: [
                   ElevatedButton(
@@ -357,7 +358,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                     child: Container(
                       height: 350,
                       decoration: BoxDecoration(
-                        color: Color.fromRGBO(247, 242, 255, 1),
+                        color: Theme.of(context).colorScheme.surfaceVariant,
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                       child: ListView.builder(

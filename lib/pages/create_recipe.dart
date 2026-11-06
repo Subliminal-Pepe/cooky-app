@@ -79,7 +79,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
             content: Text(
               AppLocalizations.of(context)!.categoryEmpty,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.red),
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
             ),
             actions: [
               ElevatedButton(
@@ -250,7 +250,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )
@@ -353,7 +353,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )
@@ -449,7 +449,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )
@@ -542,7 +542,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )
@@ -657,7 +657,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )
@@ -808,7 +808,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     ))
@@ -849,7 +849,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     )),
@@ -861,7 +861,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Container(
         decoration: BoxDecoration(
-          color: Color.fromRGBO(247, 242, 255, 1),
+          color: Theme.of(context).colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(15.0),
         ),
         height: 400,
@@ -901,9 +901,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       });
                     },
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.delete,
-                        color: Colors.redAccent,
+                        color: Theme.of(context).colorScheme.error,
                       ),
                       onPressed: () {},
                     ),
@@ -991,7 +991,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     ))
@@ -1032,7 +1032,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     )),
@@ -1043,7 +1043,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
   Widget showStepsAdded() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       height: 400,
@@ -1082,9 +1082,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1171,7 +1171,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     ))
@@ -1212,7 +1212,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                             });
                           },
                           child: Icon(Icons.delete,
-                              size: 20, color: Colors.redAccent),
+                              size: 20, color: Theme.of(context).colorScheme.error),
                         ),
                       ],
                     )),
@@ -1224,7 +1224,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     return Container(
       height: 400,
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       child: ListView.builder(
@@ -1260,9 +1260,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1339,7 +1339,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
             actions: <Widget>[
               TextButton(
                 child: Text(AppLocalizations.of(context)!.confirmExit,
-                    style: TextStyle(color: Colors.red)),
+                    style: TextStyle(color: Theme.of(context).colorScheme.error)),
                 onPressed: () {
                   setState(() {
                     // we can go back
@@ -1353,7 +1353,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
               ),
               TextButton(
                 child: Text(AppLocalizations.of(context)!.no,
-                    style: TextStyle(color: Colors.lightGreen)),
+                    style: TextStyle(color: Theme.of(context).colorScheme.tertiary)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },

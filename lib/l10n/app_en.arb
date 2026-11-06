@@ -105,7 +105,23 @@
    "contact" : "Contact:",
    "reportIssue" : "Report issue",
    "supportMe" : "You can support me by adding a star on my github and/or donate.",
-   "donate" : "Donate"}
+   "donate" : "Donate",
+   "settings" : "Settings",
+   "customization" : "Customization",
+   "themeMode" : "Theme",
+   "themeModeSystem" : "System",
+   "themeModeLight" : "Light",
+   "themeModeDark" : "Dark",
+   "themes" : "Themes",
+   "dynamicColor" : "Wallpaper color",
+   "dynamicColorSubtitle" : "Uses the colors of your wallpaper (Android 12 and later). A default palette is used on other devices.",
+   "themePurple" : "Purple",
+   "themeBlue" : "Blue",
+   "themeGreen" : "Green",
+   "themeTeal" : "Teal",
+   "themeOrange" : "Orange",
+   "themePink" : "Pink",
+   "themePreview" : "Preview"}
 
 
 

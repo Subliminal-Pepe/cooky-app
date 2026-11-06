@@ -6,6 +6,7 @@
  */
 
 import 'package:Cooky/data/language_database/language_database.dart';
+import 'package:Cooky/utils/app_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -61,7 +62,8 @@ class _LanguageState extends State<Language> {
             TextButton(
               child: Text(
                 AppLocalizations.of(context)!.ok,
-                style: const TextStyle(color: Colors.lightGreen),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.tertiary),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -95,37 +97,7 @@ class _LanguageState extends State<Language> {
                   },
                 );
               }),
-          drawer: Drawer(
-            backgroundColor: const Color.fromRGBO(234, 221, 255, 1.000),
-            child: Column(children: [
-              DrawerHeader(
-                  child: Image.asset(
-                "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
-              )),
-              // home page list tile
-              ListTile(
-                leading: const Icon(Icons.home),
-                title: Text(AppLocalizations.of(context)!.home),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/home');
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.language_sharp),
-                title: Text(AppLocalizations.of(context)!.language),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/language');
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.info_outline),
-                title: Text(AppLocalizations.of(context)!.about),
-                onTap: () {
-                  Navigator.popAndPushNamed(context, '/about');
-                },
-              )
-            ]),
-          ),
+          drawer: const AppDrawer(currentRoute: '/settings'),
         ));
   }
 }

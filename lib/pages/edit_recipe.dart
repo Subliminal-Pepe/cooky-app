@@ -231,7 +231,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   widget.editRecipeName = AppLocalizations.of(context)!.deleted;
                 });
               },
-              child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
+              child: Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -320,7 +320,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   );
                 });
               },
-              child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
+              child: Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -403,7 +403,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   widget.editDifficulty = AppLocalizations.of(context)!.deleted;
                 });
               },
-              child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
+              child: Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -484,7 +484,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   widget.editCost = AppLocalizations.of(context)!.deleted;
                 });
               },
-              child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
+              child: Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -605,7 +605,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   widget.editUrlImageScrap = null;
                 });
               },
-              child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
+              child: Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
             ),
           ],
         )
@@ -756,7 +756,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -811,7 +811,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -822,7 +822,7 @@ class _EditRecipeState extends State<EditRecipe> {
   Widget showIngredientsSelected() {
     return Container(
         decoration: BoxDecoration(
-          color: Color.fromRGBO(247, 242, 255, 1),
+          color: Theme.of(context).colorScheme.surfaceVariant,
           borderRadius: BorderRadius.circular(15.0),
         ),
         height: 400,
@@ -879,9 +879,9 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.delete,
-                        color: Colors.redAccent,
+                        color: Theme.of(context).colorScheme.error,
                       ),
                       onPressed: () {},
                     ),
@@ -957,7 +957,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -997,7 +997,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -1008,7 +1008,7 @@ class _EditRecipeState extends State<EditRecipe> {
   Widget showStepsAdded() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       height: 400,
@@ -1046,9 +1046,9 @@ class _EditRecipeState extends State<EditRecipe> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1124,7 +1124,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               ))
@@ -1164,7 +1164,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       });
                     },
                     child:
-                        Icon(Icons.delete, size: 20, color: Colors.redAccent),
+                        Icon(Icons.delete, size: 20, color: Theme.of(context).colorScheme.error),
                   ),
                 ],
               )),
@@ -1175,7 +1175,7 @@ class _EditRecipeState extends State<EditRecipe> {
   Widget showTagsAdded() {
     return Container(
       decoration: BoxDecoration(
-        color: Color.fromRGBO(247, 242, 255, 1),
+        color: Theme.of(context).colorScheme.surfaceVariant,
         borderRadius: BorderRadius.circular(15.0),
       ),
       height: 400,
@@ -1212,9 +1212,9 @@ class _EditRecipeState extends State<EditRecipe> {
                     });
                   },
                   child: IconButton(
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete,
-                      color: Colors.redAccent,
+                      color: Theme.of(context).colorScheme.error,
                     ),
                     onPressed: () {},
                   ),
@@ -1285,7 +1285,7 @@ class _EditRecipeState extends State<EditRecipe> {
             actions: <Widget>[
               TextButton(
                 child: Text(AppLocalizations.of(context)!.confirmExit,
-                    style: TextStyle(color: Colors.red)),
+                    style: TextStyle(color: Theme.of(context).colorScheme.error)),
                 onPressed: () {
                   setState(() {
                     // we can go back
@@ -1299,7 +1299,7 @@ class _EditRecipeState extends State<EditRecipe> {
               ),
               TextButton(
                 child: Text(AppLocalizations.of(context)!.no,
-                    style: TextStyle(color: Colors.lightGreen)),
+                    style: TextStyle(color: Theme.of(context).colorScheme.tertiary)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
